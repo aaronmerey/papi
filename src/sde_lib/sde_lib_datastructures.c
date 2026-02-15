@@ -265,8 +265,8 @@ int exp_container_insert_element(recorder_data_t *exp_container, size_t typesize
 
         chunk += 1; // we need to allocate the next chunk from the last one we found.
         if ( chunk >= EXP_CONTAINER_ENTRIES ) {
-          SDE_ERROR("exp_container_insert_element(): Exponential container at max capacity. Unable to insert element.");
-          return SDE_EINVAL;
+            SDE_ERROR("exp_container_insert_element(): Exponential container at max capacity. Unable to insert element.");
+            return SDE_EINVAL;
         }
 
         new_segment_size = ((long long)1<<chunk) * EXP_CONTAINER_MIN_SIZE;
